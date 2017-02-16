@@ -1,21 +1,29 @@
-
-default: &default
+development:
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
+  pool: 5
   database: organigrama_development
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: organigrama_test
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: organigrama_production
-  username: organigrama
-  password: <%= ENV['ORGANIGRAMA_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
