@@ -1,8 +1,1006 @@
-- if user_signed_in?
-  %li
-    = link_to('Logout', destroy_user_session_path, :method => :delete)
-- else
-  %li
-    = link_to('Login', new_user_session_path)
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+-# - if user_signed_in?
+-#   %li
+-#     = link_to('Logout', destroy_user_session_path, :method => :delete)
+-# - else
+-#   %li
+-#     = link_to('Login', new_user_session_path)
+
+
+/ LOGO MENU INTERIOR
+#fondo_color3
+/ logo interior
+%a.logoPrincipal{:href => "#/"}
+  =image_tag("svg/logoAgetic1_c.svg")
+#logoInterior
+  #fondo_color1 s
+/ 
+#cabeceraResponsive
+  .logo
+    %a{:href => "#/"}
+      =image_tag("svg/logoAgetic1.svg", width:"145", alt:"Logo Agetic")
+  .menu-collapsed
+    .bar
+    #menuResOpc
+      %ul
+        %a{:href => "#/nosotros"}
+          .opcion
+            =image_tag("svg/nosotros.svg", width:"32", alt:"nosotros")
+            %p Nosotros
+        %a{:href => "#/gobierno"}
+          .opcion
+            =image_tag("svg/gobierno_electronico.svg", alt:"Gobierno", width:"32")
+            %p Gobierno
+        %a{:href => "#/simplificacion-de-tramites"}
+          .opcion
+            =image_tag("svg/ciudadania.svg", alt:"ciudadania", width:"32")
+            %p Ciudadanía
+        %a{:href => "#/prensa"}
+          .opcion
+            =image_tag("svg/comunicacion.svg", alt:"prensa", width:"32")
+            %p Prensa
+/ menu interior
+.menuInterior
+  %a.nosotros.m1.animated.pulse.if.borderOn.hvr-bob{:class => "<?php ($op1 == 1){ ?> <?php } ?>", :href => "#/nosotros"}
+    =image_tag("svg/nosotros.svg", alt:"nosotros")
+    .tooltip.blanco
+      %span Nosotros
+  %a.gobierno.tooltipped.m2.animated.pulse.if.borderOn.hvr-bob{:class => "<?php ($op1 == 2){ ?> <?php } ?>", :href => "#/gobierno"}
+    =image_tag("svg/gobierno_electronico.svg", alt:"gobierno")
+    .tooltip.blanco
+      %span Gobierno
+  %a.campana.tooltipped.animated.if.borderOn.hvr-bob{:class => "pulse<?php ($op1 == 3){ ?> <?php } ?>", :href => "#/simplificacion-de-tramites"}
+    =image_tag("svg/ciudadania.svg", alt:"ciudadania")
+    .tooltip.blanco
+      %span Ciudadania
+  %a.prensa.tooltipped.animated.pulse.if.borderOn.hvr-bob{:class => "<?php ($op1 == 4){ ?> <?php } ?>", :href => "#/prensa"}
+    =image_tag("svg/comunicacion.svg", alt:"prensa")
+    .tooltip.blanco
+      %span Prensa
+
+      / FIN LOGO MENU INTERIOR
+      / INICIO NOSOTROS
+      =image_tag("svg/transparencia_c.svg", alt:"Transparencia")
+      -# %a.tooltipped.m2.animated.fadeInUp{"data-delay" => "50", "data-position" => "buttom", "data-tooltip" => "Organigrama", :href => "#/organigrama"}
+      
+-# .submenu
+-#   %a.tooltipped.m1.animated.fadeInUp.submenuOn{"data-delay" => "50", "data-position" => "buttom", "data-tooltip" => "Transparencia", :href => "#/transparencia"}
+-#     !!! XML
+-#     %span.seleccionado
+-#     !!! XML
+-#     .op1.animated.fadeIn Transparencia
+-#     =image_tag("svg/transparencia_c.svg", alt:"Transparencia")
+-#   %a.tooltipped.m2.animated.fadeInUp{"data-delay" => "50", "data-position" => "buttom", "data-tooltip" => "Organigrama", :href => "#/organigrama"}
+-#     !!! XML
+-#     %span.seleccionado
+-#     !!! XML
+-#     .op1.animated.fadeIn Organigrama
+-#     =image_tag("svg/organigrama_c.svg", alt:"organigrama")
+-#   %a.tooltipped.m3.animated.fadeInUp{"data-delay" => "50", "data-position" => "buttom", "data-tooltip" => "Contacto", :href => "#/contacto"}
+-#     !!! XML
+-#     %span.seleccionado
+-#     !!! XML
+-#     .op1.animated.fadeIn Contacto
+-#     =image_tag("svg/contacto_c.svg", alt:"contacto")
+-# #submenuInteriorResponsive.animated.fadeInRight
+-#   %input#activar{:name => "activar", :type => "checkbox"}/
+-#   %label.inputlabel{:for => "activar"}
+-#   .desplegable
+-#     .m1.animated.fadeInUp
+-#       %a{:href => "#/transparencia"} Transparencia
+-#     .m2.animated.fadeInUp
+-#       %a{:href => "#/organigrama"} Organigrama
+-#     .m3.animated.fadeInUp
+-#       %a{:href => "#/contacto"} Contacto      
+
+    / FIN NOSOTROS
+
+!!! XML
+!!! XML
+/ MENU PRINCIPAL
+%a.scrollup.hvr-float{:href => "#"} Scroll
+!!! XML
+/ FIN MENU PRINCIPAL
+#submenuInterior
+  %h1.animated.bounce Organigrama
+  %hr.borrar/
+  / SUBMENU
+  !!! XML
+  / SUBMENU FIN
+/ contenido
+#contenido
+  .col.s12
+    %button.accordion Dirección General
+    .panel
+      .row
+        .col.s12.center-align
+          %a{:href => ""}
+            #ficha
+              .foto.center-align
+                =image_tag "fotos/hombre.svg"
+              .datos
+                %h4 NICOLAS LAGUNA
+                %h6 Director General Ejecutivo
+          %hr/
+        .col.s12.m6.offset-m6
+          %a{:href => ""}
+            #ficha
+              .foto.center-align
+                =image_tag "fotos/mujer.svg"
+              .datos
+                %h4 MELANY GUTIERREZ
+                %h6 Secretaria de Dirección Ejecutiva
+    / ///////////////////// ADMINISTRATIVA FINANCIERA //////////////////////
+    .panel.show
+      / /////////// AREA DE COMUNICACION ///////////
+      %button.accordion.animated.flipInX.m1 Área de Comunicación
+      .panel
+        .row
+          .col.s12.center-align
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 NATALIA ANTEZANA
+                  %h6 Responsable de Comunicación
+            %hr/
+          .col.s12
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 LUIS ZAPATA
+                  %h6 Profesional de Comunicación en Redes Sociales
+          /
+            <div class="col s12 m6">
+            <a href="">
+            <div id="ficha">
+            <div class="foto center-align">
+            <img src="img/fotos/mujer.svg" alt="foto6">
+            </div>
+            <div class="datos">
+            <h4>MARIELIZA VASQUEZ</h4>
+            <h6>Técnico de Diagramación</h6>
+            </div>
+            </div>
+            </a>
+            </div>
+      / /////////// AREA DE PLANIFICACION ///////////
+      %button.accordion.animated.flipInX.m2 Área de Planificación
+      .panel
+        .row
+          .col.s12.center-align
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 ELIANA ONIS
+                  %h6 Responsable de Planificación
+            %hr/
+          /
+            <div class="col s12 m6">
+            <a href="">
+            <div id="ficha">
+            <div class="foto center-align">
+            <img src="img/fotos/hombre.svg" alt="foto6">
+            </div>
+            <div class="datos">
+            <h4>SERGIO GAMARRA</h4>
+            <h6>Profesional de Planificación</h6>
+            </div>
+            </div>
+            </a>
+            </div>
+          .col.s12
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 ANA VILLARREAL
+                  %h6 Profesional de Seguimiento a la Ejecución
+      / /////////// AREA DE AUDITORIA INTERNA ///////////
+      %button.accordion.animated.flipInX.m3 Área de Auditoria Interna
+      .panel
+        .row
+          .col.s12.center-align
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 DAVID PEÑARANDA
+                  %h6 Responsable de Auditoria Interna
+            %hr/
+          .col.s12
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 LUIS PILLCO
+                  %h6 Profesional de Apoyo en Auditoria Interna
+      / /////////// UNIDAD DE ADMINISTRACION FINANCIERA ///////////
+      %button.accordion.animated.flipInX Unidad administrativa financiera
+      #foo.panel
+        .panel.show
+          .row
+            .col.s12.center-align
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/mujer.svg"
+                  .datos
+                    %h4 CARMEN VALVERDE
+                    %h6 Jefe de Unidad Administrativa Financiera
+            .col.s12
+              %hr/
+            .col.s12.m6
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/mujer.svg"
+                  .datos
+                    %h4 JAEL RODRIGUEZ
+                    %h6 Secretaria de Jefaturas de Unidad
+            .col.s12.m6
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/hombre.svg"
+                  .datos
+                    %h4 NELSON COLOMO
+                    %h6 Mensajero de Dirección Ejecutiva
+            %button.accordion.animated.flipInX Responsable de Adminitrativo
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 CLARA MORALES
+                          %h6 Responsable administrativo
+                  .col.s12
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ISRAEL MALDONADO
+                          %h6 Profesional En Recursos Humanos
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 VERONICA PACORICONA
+                          %h6 Técnico de Apoyo Administrativo
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 MIRIAM MAMANI
+                          %h6 Técnico de Recursos Humanos
+            %button.accordion.animated.flipInX Responsable de Adminitrativo
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 EFRAIN QUISPE
+                          %h6 Responsable financiero
+                  .col.s12
+                    %hr/
+                  .col.s12
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ANTEZANA DANIEL
+                          %h6 Profesional de Presupuesto
+      / ///////////// JURIDICA //////////////
+      %button.accordion.animated.flipInX.m4 Unidad de Jurídica
+      .panel
+        .row
+          .col.s12.center-align
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 JUAN TORREZ
+                  %h6 Jefe de Unidad Jurídica
+            %hr/
+          .col.s12.m6
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 SKARLETH SAAVEDRA
+                  %h6 Profesional de Análisis
+          .col.s12.m6
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 PERCY ZENTENO
+                  %h6 Profesional de Gestión
+      / /////// UNIDAD DE SERVICIOS E INFRAESTRUCTURA TECNOLOGICA ///////
+      %button.accordion.animated.flipInX.m5 Unidad de servicios e infraestructura tecnológica
+      #foo.panel
+        .panel.show
+          .row
+            .col.s12.center-align
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/hombre.svg"
+                  .datos
+                    %h4 DAVIS MENDOZA
+                    %h6 Jefe de Unidad de Servicio e Infraestructura Tecnológica
+              %hr/
+            .col.s12.m6.l4
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/hombre.svg"
+                  .datos
+                    %h4 VLADIMIR ZALLES
+                    %h6 Profesional de Hardware y Comunicaciones
+            .col.s12.m6.l4
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/hombre.svg"
+                  .datos
+                    %h4 GABRIEL CONDORI
+                    %h6 Profesional de Administración de Comunicaciones
+            .col.s12.m6.l4
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/mujer.svg"
+                  .datos
+                    %h4 KATHERINE AGUILAR
+                    %h6 Técnico Administración de Hardware
+            %div{:style => "clear:both;"}
+            %button.accordion.animated.flipInX.m5 Área de Servicios
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 DIEGO PARRAGA
+                          %h6 Responsable de Servicios
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ARIEL GRUICH
+                          %h6 Profesional de Gestión de Capacidad y Disponibilidad
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 IVAN MAMANI
+                          %h6 Profesional de Soporte Técnico
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 PAOLA FERNANDEZ
+                          %h6 Técnico Soporte Técnico Interno
+      / ////// UNIDAD DE GOBIERNO ELECTRÓNICO ///////
+      %button.accordion.animated.flipInX.m6 Unidad de gobierno electrónico
+      #foo.panel
+        .panel.show
+          .row
+            .col.s12.center-align
+              %a{:href => ""}
+                #ficha
+                  .foto.center-align
+                    =image_tag "fotos/mujer.svg"
+                  .datos
+                    %h4 ELIANA QUIROZ
+                    %h6 Jefe de Unidad de Gobierno Electrónico
+            %button.accordion.animated.flipInX.m6 Área de Información y Participación
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 MARIELA PADILLA
+                          %h6 Profesional de Información Socioeconómica
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 RAUL MOLINA
+                          %h6 Profesional de Información Geográfica
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 INTI RIOJA
+                          %h6 Profesional de Proyectos de Información Y Participación
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 MARTIN MERUVIA
+                          %h6 Profesional en Análisis de Datos Socioeconómicos
+                  s
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 RENE MENDOZA
+                          %h6 Profesional en Análisis de Datos Geográficos
+            %button.accordion.animated.flipInX.m6 Área de Procesos y Procedimientos Gubernamentales
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ESTEBAN LIMA
+                          %h6 Responsable de Procesos y Procedimientos Gubernamentales
+                    %hr/
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/hombre.svg"
+                          .datos
+                            %h4 MARCO AVENDAÑO
+                            %h6 Profesional de Diseño de Trámites
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/hombre.svg"
+                          .datos
+                            %h4 DANIEL VISCARRA
+                            %h6 Profesional de Procesos Y Procedimientos
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/hombre.svg"
+                          .datos
+                            %h4 MARCO LAURA
+                            %h6 Profesional de Procesos Y Procedimientos
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/mujer.svg"
+                          .datos
+                            %h4 LAURA VELASCO
+                            %h6 Profesional en Implementación de Tramites
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/mujer.svg"
+                          .datos
+                            %h4 MARIANA OTTICH
+                            %h6 Profesional en Implementación de Procesos y Procedimientos
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/hombre.svg"
+                          .datos
+                            %h4 RONALD ESCOBAR
+                            %h6 Profesional en Gestión de Proyectos de Gobierno Electrónico
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/hombre.svg"
+                          .datos
+                            %h4 RODRIGO MARTINEZ
+                            %h6 Profesional de Apoyo en Procesos y Procedimientos
+                    .col.s12.m6.l4
+                      %a{:href => ""}
+                        #ficha
+                          .foto.center-align
+                            =image_tag "fotos/mujer.svg"
+                          .datos
+                            %h4 VALERIA MENDEZ
+                            %h6 Profesional de Gestión de Interoperabilidad
+            %button.accordion.animated.flipInX.m6 Área de Coordinación Interinstitucional
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 KHANTUTA MURUCHI
+                          %h6 Responsable de Coordinación Interinstitucional
+                  .col.s12
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 CRISTINA LOMA
+                          %h6 Profesional de Relacionamiento Interinstitucional
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 CAROLINA OVALE
+                          %h6 Profesional de Enlace Interinstitucional
+      / UNIDAD DE INNOVACIÓN, INVESTIGACIÓN y DESARROLLO
+      %button.accordion.animated.flipInX.m6 Unidad de innovación, investigación y desarrollo
+      #foo.panel
+        .panel.show
+          .row
+            %button.accordion.animated.flipInX.m6 Área de Investigación
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ARIEL CONDO
+                          %h6 Responsable de Investigación
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 OMAR GUTIERREZ
+                          %h6 Profesional de Investigación en Gobierno Electrónico
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ARTURO HERNANDEZ
+                          %h6 Profesional de Investigación en Seguridad de la Información
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ERICK POPPE
+                          %h6 Profesional de Investigación de Gestión de Datos e Información
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 DILMA YUGAR
+                          %h6 Profesional de Investigación en Gobierno Electrónico
+            %button.accordion.animated.flipInX.m6 Área de Desarrollo y Actualización de Servicios
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 NORMAN HUASEBE
+                          %h6 Responsable de Desarrollo y Actualización de Servicios
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 JUAN POMA
+                          %h6 Profesional de Innovación y Diseño
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 REYNALDO QUISPE
+                          %h6 Profesional de Desarrollo de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 JUDITH CALIZAYA
+                          %h6 Profesional de Desarrollo Web
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ALVARO MAMANI
+                          %h6 Profesional de Desarrollo Movil
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ELIO CANQUI
+                          %h6 Profesional de Desarrollo e Implementación de Modelo de Datos
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 RICHAR RIVERO
+                          %h6 Técnico de Desarrollo Web
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 PEDRO CALLISAYA
+                          %h6 Técnico de Desarrollo de Aplicaciones
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 CARLOS MACUCHAPI
+                          %h6 Técnico de Desarrollo de Sistemas
+            %button.accordion.animated.flipInX.m6 Área de Desarrollo de Sistemas de Información Pública
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 MARCELO ARTEAGA
+                          %h6 Responsable de Desarrollo de Sistemas de Información Publica
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 NEMECIO COARITE
+                          %h6 Profesional de Innovación y Diseño
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 FRANZ HUAYTA
+                          %h6 Profesional de Desarrollo de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 EVA JIMENEZ
+                          %h6 Profesional de Desarrollo e Implementación de Modelo de Datos
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 CECILIA ALVARADO
+                          %h6 Profesional de Desarrollo de Sistemas de Información Geográfica
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 RONALD VALLEJOS
+                          %h6 Profesional de Validación de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 JOSÉ LOZA
+                          %h6 Técnico de Desarrollo de Aplicaciones
+            %button.accordion.animated.flipInX.m6 Área de Innovación y Desarrollo en Gobierno Electrónico
+            #foo.panel
+              .panel.show
+                .row
+                  .col.s12.center-align
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ELMER MENDOZA
+                          %h6 Responsable de Innovación y Desarrollo en Gobierno Electrónico
+                    %hr/
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 SERGIO CRIALES
+                          %h6 Profesional de Innovación y Diseño
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ARIEL ALVARADO
+                          %h6 Profesional de Desarrollo de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/mujer.svg"
+                        .datos
+                          %h4 MARY ROSALES
+                          %h6 Profesional de Desarrollo Web
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ROLANDO GUEVARA
+                          %h6 Profesional de Desarrollo de Aplicaciones
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 ALBERTO INCH
+                          %h6 Profesional de Desarrollo e Implementación de Modelo de Datos
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 RAMIRO HUAYLLER
+                          %h6 Profesional de Desarrollo Móvil
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 JUAN CONDORI
+                          %h6 Profesional de Validación de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 DANIEL JIMENEZ
+                          %h6 Técnico de Desarrollo de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 GROVER PINTO
+                          %h6 Técnico de Desarrollo de Sistemas
+                  .col.s12.m6.l4
+                    %a{:href => ""}
+                      #ficha
+                        .foto.center-align
+                          =image_tag "fotos/hombre.svg"
+                        .datos
+                          %h4 CARLOS REMUZZI
+                          %h6 Técnico en Desarrollo Web
+      / /////////// UNIDAD CENTRO DE GESTION DE ///////////
+      %button.accordion.animated.flipInX.m7 Unidad Centro de Gestión de Incidentes Informáticos
+      .panel
+        .row
+          %button.accordion.animated.flipInX.m7 Área de Auditoria en Informática
+          .panel
+            .row
+              .col.s12.m6
+                %a{:href => ""}
+                  #ficha
+                    .foto.center-align
+                      =image_tag "fotos/hombre.svg"
+                    .datos
+                      %h4 HORACIO LOPEZ
+                      %h6 Profesional de Evaluación de Seguridad
+              .col.s12.m6
+                %a{:href => ""}
+                  #ficha
+                    .foto.center-align
+                      =image_tag "fotos/hombre.svg"
+                    .datos
+                      %h4 GONZALO VARGAS
+                      %h6 Profesional de Análisis Forense
+          %button.accordion.animated.flipInX.m7 Área de Reacción ante Incidentes y Vulnerabilidades
+          .panel
+            .row
+              .col.s12.m6
+                %a{:href => ""}
+                  #ficha
+                    .foto.center-align
+                      =image_tag "fotos/hombre.svg"
+                    .datos
+                      %h4 FRANZ ROJAS
+                      %h6 Profesional de Gestión de Amenazas y Vulnerabilidades
+              .col.s12.m6
+                %a{:href => ""}
+                  #ficha
+                    .foto.center-align
+                      =image_tag "fotos/mujer.svg"
+                    .datos
+                      %h4 MABEL DONAIRE
+                      %h6 Profesional de Detección Vulnerabilidades
+      / /////////// UNIDAD CENTRO DE ANALISIS DE LA INFORMACIÓN ///////////
+      %button.accordion.animated.flipInX.m8 Unidad Centro de Análisis de la Información
+      .panel
+        .row
+          .col.s12.center-align
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 LUIS RODRIGUEZ
+                  %h6 Jefe de Unidad de Centro de Análisis de Información
+            %hr/
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 PAOLA CESPEDES
+                  %h6 Profesional de Análisis Económico
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 DAVID BOUTIER
+                  %h6 Profesional de Análisis Social
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 GABRIELA COSSIO
+                  %h6 Profesional de Análisis Político
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 CLAUDIA ESPINOZA
+                  %h6 Profesional en Análisis Tecnológico
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 PATRICIA MONTAÑO
+                  %h6 Profesional de Análisis Económico
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 ISRRAEL NINA
+                  %h6 Profesional de Análisis Social
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 OSCAR MENDEZ
+                  %h6 Profesional de Análisis Político
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/hombre.svg"
+                .datos
+                  %h4 REMBERTO TAMBO
+                  %h6 Profesional de Análisis Tecnológico
+          .col.s12.m6.l4
+            %a{:href => ""}
+              #ficha
+                .foto.center-align
+                  =image_tag "fotos/mujer.svg"
+                .datos
+                  %h4 YESMY MARQUEZ
+                  %h6 Secretaria
+  !!! XML
+!!! XML
+/ ACORDEON ORGANIGRAMA
+:javascript
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+      acc[i].onclick = function(){
+          this.classList.toggle("active");
+          this.nextElementSibling.classList.toggle("show");
+      }
+  }

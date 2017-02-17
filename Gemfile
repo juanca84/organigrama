@@ -1,3 +1,4 @@
+# coding: utf-8
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -58,8 +59,8 @@ gem 'devise'
 # LDAP
 gem 'net-ldap'
 
-# Twitter Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+# Materialize 
+gem 'materialize-sass'
 
 # Haml
 gem 'haml-rails'
